@@ -324,6 +324,7 @@ export default Timeline
 
 const Container = styled.div`
     height: 60vh;
+    background: #405972;
     display: flex;
     align-items: center;
     justify-content: center;

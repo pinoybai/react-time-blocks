@@ -41,4 +41,6 @@ const Container = styled.div`
 const MainQuestion = styled.div`
     width: 500px;
     text-align: center;
+    background: #405972;
+    padding: 30px 20px;
 `

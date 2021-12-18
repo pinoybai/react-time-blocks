@@ -270,8 +270,8 @@ function Timeline() {
                     </PlayPauseButtons>
                 </TimelineButtonsCover>
                 <ZoomButtons>
-                    <ZoomInButton disabled={MsZoom <= 1000 ? 'disabled' : null} className="push-button green" onClick={() => zoomInTimeline()}><FontAwesomeIcon icon={faSearchPlus} /></ZoomInButton>
-                    <ZoomOutButton disabled={MsZoom >= 120000 ? 'disabled' : null} className="push-button green" onClick={() => zoomOutTimeline()}><FontAwesomeIcon icon={faSearchMinus} /></ZoomOutButton>
+                    <ZoomInButton title="Timeline zoom in" disabled={MsZoom <= 1000 ? 'disabled' : null} className="push-button green" onClick={() => zoomInTimeline()}><FontAwesomeIcon icon={faSearchPlus} /></ZoomInButton>
+                    <ZoomOutButton title="Timeline zoom out" disabled={MsZoom >= 120000 ? 'disabled' : null} className="push-button green" onClick={() => zoomOutTimeline()}><FontAwesomeIcon icon={faSearchMinus} /></ZoomOutButton>
                 </ZoomButtons>
                 <label style={{marginTop: '15px', marginRight: '15px'}}>
                 <input type="checkbox" id="pauseOnComplete" name="pauseOnComplete"/> Pause On Alarm</label>
@@ -292,7 +292,7 @@ function Timeline() {
                                     </ColorInputCover>
                                     <RemoveIcon onClick={removeTask}><FontAwesomeIcon icon={faTimes} /></RemoveIcon>
                                 </InnerContent>
-                                <AddTask className="addTaskButton" data-id={task.id} onClick={addTasktoRight}>
+                                <AddTask title="Add Task to Right" className="addTaskButton" data-id={task.id} onClick={addTasktoRight}>
                                     <span>+</span>
                                 </AddTask>
                             </Task>

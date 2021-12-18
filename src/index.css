@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #2c3e50;
+  color: white;
+}
+
+button.create-tasks{
+  width: 100%;
+  padding: 10px 0;
+  background: #0053e5;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type="number"]{
+  max-width: 100px;
+  width: 50px;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 25px;
+}
+
+button.push-button{
+  font-size:12px;
+  border:none;
+  padding:10px 18px 10px 18px;
+  border-radius:5px;
+    box-shadow:0px 10px 0px 0px #1d7f8a, 
+      0px 0px 10px 0px rgba(120, 120, 120, 0.4);
+  color:white;
+  background:#239dab;
+  cursor:pointer;
+  position:relative;
+  top:0;
+}
+
+button.push-button:focus{
+  outline:none;
+}
+button.push-button:active{
+  box-shadow: 0px 5px 0px 0px #1d7f8a;
+  top:5px;
+}
+
+.push-button.red{
+  background:#d03651;
+  box-shadow:0px 10px 0px 0px #a72b41,
+    0px 0px 10px 0px rgba(120, 120, 120, 0.4);;
+}
+
+.push-button.red:active{
+  box-shadow: 0px 5px 0px 0px #a72b41;
+}
+
+.push-button.blue{
+  background: #74b9ff;
+  box-shadow:0px 10px 0px 0px #be4fbb,
+    0px 0px 10px 0px rgba(120, 120, 120, 0.4);
+}
+
+.push-button.blue:active{
+  box-shadow: 0px 5px 0px 0px #be4fbb;
+}
+
+.push-button.orange{
+  background: #e67e22;
+  box-shadow:0px 10px 0px 0px #be4f4f,
+    0px 0px 10px 0px rgba(120, 120, 120, 0.4);
+}
+
+.push-button.orange:active{
+  box-shadow: 0px 5px 0px 0px #be4f4f;
+}
+
+.push-button.green{
+  background:#61a74b;
+  box-shadow:0px 10px 0px 0px #4e883c,
+    0px 0px 10px 0px rgba(120, 120, 120, 0.4);;
+}
+
+.push-button.green:active{
+  box-shadow: 0px 5px 0px 0px #4e883c;
+}
+
+#timelineCover::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+#timelineCover::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+
+#timelineCover::-webkit-scrollbar-thumb {
+  background: #868181;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+#timelineCover::-webkit-scrollbar-thumb:hover{
+  background: #868181;
+}
+
+#timelineCover::-webkit-scrollbar-thumb:active {
+  background: #868181;
+}
+
+#timelineCover::-webkit-scrollbar-track {
+  background: #5c5a5a;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+#timelineCover::-webkit-scrollbar-track:hover {
+  background: #5c5a5a;
+}
+
+#timelineCover::-webkit-scrollbar-track:active {
+  background: #5c5a5a;
+}
+
+#timelineCover::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.customOverlay {
+  background: rgba(36, 123, 160, 0.7);
+}
+.customModal {
+  background: #34495e !important;
+}
+
+.editTaskNamePopupInput{
+  width: 90%;
+  font-size: 16px;
+  padding: 10px 6px;
+  outline: none;
+  border-radius: 5px;
+}

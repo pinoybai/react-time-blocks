@@ -53,14 +53,14 @@ export const pxToMs = (px, zoom) => {
 
 export const getZoomValue = (currentZoom, zoomType) => {
     if(zoomType === "IN"){
-        if(currentZoom == 12000){
+        if(currentZoom === 12000){
             return 30000;
         }
         return currentZoom / 2;
     }
 
-    if(zoomType == "OUT"){
-        if(currentZoom == 12000){
+    if(zoomType === "OUT"){
+        if(currentZoom === 12000){
             return 12000;
         }
 

@@ -18,7 +18,7 @@ function Question() {
     return (
         <Container>
             <MainQuestion>
-                <h2>How long do you have to complete your tasks?</h2>
+                <h2 style={{fontSize: '22px', marginTop: '0'}}>How long do you have to complete your tasks?</h2>
                 <form method="POST" onSubmit={(e) => setTheTotalTime(e)}>
                     <label><input type="number" min="0" name="hourInput" id="hourInput" placeholder="00"/><span style={{marginLeft: '5px', marginRight: '20px'}}>Hour(s)</span></label>
                     <label><input type="number" min="0" name="minuteInput" id="minuteInput" placeholder="00"/><span style={{marginLeft: '5px', marginRight: '20px'}}>Minute(s)</span></label>

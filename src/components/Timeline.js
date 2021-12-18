@@ -208,7 +208,7 @@ function Timeline() {
             document.getElementById('usedTime').setAttribute('data-before', millisecondsToStr(usedTime*1000));
 
             if(alarmPoints.includes(usedTime)){
-                let a = new Audio('https://pomofocus.io/audios/alarms/alarm-kitchen.mp3');
+                let a = new Audio('/audio/alarm-kitchen.mp3');
                 a.play();
                 
                 if(document.getElementById('pauseOnComplete').checked){
@@ -256,7 +256,7 @@ function Timeline() {
     }
 
     return (
-        <>
+        <Container>
             <TimelineControlsCover>
                 <Totaltimedisplay>Total time: {millisecondsToStr(totalTime)}</Totaltimedisplay>
                 {/* <ETA>ETA: {new Date().toLocaleString(navigator.language, {hour: '2-digit', minute:'2-digit'}) + ""}</ETA> */}
@@ -316,11 +316,18 @@ function Timeline() {
                     onCloseModal()
                 }}>UPDATE</button>
             </Modal>
-        </>
+        </Container>
     )
 }
 
 export default Timeline
+
+const Container = styled.div`
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
 const TimelineControlsCover = styled.div`
     display: flex;
@@ -519,6 +526,7 @@ const OverflowTask = styled.div`
     position: relative;
     height: 30px;
     width: 30px;
+    visibility: hidden;
 
     span {
         font-weight: bold;

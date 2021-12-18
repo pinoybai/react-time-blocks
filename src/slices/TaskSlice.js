@@ -4,22 +4,22 @@ const initialState = {
     tasks: [
         {
             id: 'nsudlf',
-            name: 'Task 1 of the year',
+            name: '1️⃣ Click here to edit',
             color: '#4aaee7',
-            timeNeeded: 60000, //30 minutes in milliesconds
+            timeNeeded: 1200000, //30 minutes in milliesconds
             status: 'inProgress'
         },
         {
             id: 'sodnsf2',
-            name: 'This is a second tash',
+            name: '2️⃣ Resize ↔️ the boxes to change time.',
             color: '#aeaeae',
-            timeNeeded: 120000, //10 minutes in 10 seconds
+            timeNeeded: 1800000, //10 minutes in 10 seconds
             status: 'inProgress'
         },
         {
             id: 'lasuvs',
-            name: 'This is a third task',
-            color: '#dddddd',
+            name: '3️⃣ Press PLAY and start your tasks',
+            color: '#7f8fa6',
             timeNeeded: 1800000, //15 minutes in millie seconds
             status: 'inProgress'
         }

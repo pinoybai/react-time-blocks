@@ -290,6 +290,7 @@ function Timeline() {
     }
 
     const changeTaskDuration = (updatedTime, taskId) => {
+        pauseTheTaskTimer()
         dispatch(setTasks({updatedTime, taskId}))
     }
 

@@ -5,22 +5,22 @@ const initialState = {
         {
             id: 'nsudlf',
             name: '1️⃣ Click here to edit',
-            color: '#4aaee7',
-            timeNeeded: 1200000, //30 minutes in milliesconds
+            color: '#6a89cc',
+            timeNeeded: 1200000, //20 minutes in milliesconds
             status: 'inProgress'
         },
         {
             id: 'sodnsf2',
-            name: '2️⃣ Resize ↔️ the boxes to change time.',
-            color: '#aeaeae',
-            timeNeeded: 1800000, //10 minutes in 10 seconds
+            name: '2️⃣ Click on time or Resize ↔️ the boxes to change time.',
+            color: '#686de0',
+            timeNeeded: 2400000, //40 minutes in 10 seconds
             status: 'inProgress'
         },
         {
             id: 'lasuvs',
             name: '3️⃣ Press PLAY and start your tasks',
-            color: '#7f8fa6',
-            timeNeeded: 1800000, //15 minutes in millie seconds
+            color: '#f3a683',
+            timeNeeded: 1800000, //30 minutes in millie seconds
             status: 'inProgress'
         }
     ]

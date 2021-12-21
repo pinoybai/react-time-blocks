@@ -36,8 +36,14 @@ function Timeline() {
     let alarmPoints = useSelector(selectAlarmPoints);
 
     const [open, setOpen] = useState(false);
+    const [timeOpen, setTimeOpen] = useState(false);
+
     const [editingPopupTask, setEditingPopupTask] = useState("");
     const [editingPopupId, setEditingPopupId] = useState("");
+
+    const [editingPopupTaskTimeHour, setEditingPopupTaskTimeHour] = useState("");
+    const [editingPopupTaskTimeMinute, setEditingPopupTaskTimeMinute] = useState("");
+    const [editingPopupTimeId, setEditingPopupTimeId] = useState("");
 
     useEffect(() => {
         pauseTheTaskTimer()
@@ -255,6 +261,38 @@ function Timeline() {
         onOpenModal(oldName, taskId)
     }
 
+    const onTimeOpenModal = (oldDuration, taskId) => {
+        setTimeOpen(true)
+        setTimeout(function(){
+
+            let minutes = Math.floor((oldDuration / (1000 * 60)) % 60),
+            hours = Math.floor((oldDuration / (1000 * 60 * 60)) % 24);
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+
+            let oldDurationHour = hours;
+            let oldDurationMinute = minutes;
+
+            setEditingPopupTaskTimeHour(oldDurationHour);
+            setEditingPopupTaskTimeMinute(oldDurationMinute);
+            setEditingPopupTimeId(taskId);
+        }, 100)
+    }
+
+    const editTaskDurationClick = (e, oldDuration, taskId) => {
+        pauseTheTaskTimer()
+        onTimeOpenModal(oldDuration, taskId)
+    }
+
+    const onCloseTimeModal = () => {
+        setTimeOpen(false)
+    }
+
+    const changeTaskDuration = (updatedTime, taskId) => {
+        dispatch(setTasks({updatedTime, taskId}))
+    }
+
     return (
         <Container>
             <TimelineControlsCover>
@@ -285,7 +323,7 @@ function Timeline() {
                                 <InnerContent>
                                     <OverflowTask className="overflowName"><span onClick={(e) => overflowEditTaskName(e, task.name, task.id)} title={task.name}>...</span></OverflowTask>
                                     <EditText style={{textAlign: 'center', width: 'auto'}} onChange={(text) => changeTaskName(text, task.id)} className="taskName" value={task.name}/>
-                                    <p>{millisecondsToStr(task.timeNeeded)}</p>
+                                    <p style={{cursor: 'pointer'}} onClick={(e) => editTaskDurationClick(e, task.timeNeeded, task.id)}>{millisecondsToStr(task.timeNeeded)}</p>
                                     <ColorInputCover>
                                         <FontAwesomeIcon icon={faTint} />
                                         <input type="color" value={task.color} className="inputColor" onChange={(e) => changeTaskColor(e, task.id)}/>
@@ -314,6 +352,30 @@ function Timeline() {
                         changeTaskName(editingPopupTask, editingPopupId)
                     }, 100)
                     onCloseModal()
+                }}>UPDATE</button>
+            </Modal>
+
+            <Modal open={timeOpen} onClose={onCloseTimeModal} center classNames={{overlay: 'customOverlay', modal: 'customModal'}}>
+                <h2>Edit Task Duration</h2>
+                
+                <label style={{marginRight: '15px'}}><input className="editTaskNamePopupInput" type="number" id="updateTaskHourPopupInput" name="updateTaskHourPopupInput" value={editingPopupTaskTimeHour} onChange={(e) => {
+                  setEditingPopupTaskTimeHour(e.target.value)
+                }}/>&nbsp;Hour(s)</label>
+
+                <label style={{marginRight: '15px'}}><input className="editTaskNamePopupInput" type="number" id="updateTaskMinutePopupInput" name="updateTaskMinutePopupInput" value={editingPopupTaskTimeMinute} onChange={(e) => {
+                  setEditingPopupTaskTimeMinute(e.target.value)
+                }}/>&nbsp;Minute(s)</label>
+
+                <button style={{marginTop: '10px'}} className="push-button red" onClick={() => {
+                    setTimeout(function() {
+                        let hourInMillieSeconds = parseInt(editingPopupTaskTimeHour) * 3600000 || 0;
+                        let minuteInMillieSeconds = parseInt(editingPopupTaskTimeMinute) * 60000 || 0;
+                        
+                        let  totalDuration = hourInMillieSeconds + minuteInMillieSeconds
+
+                        changeTaskDuration(totalDuration, editingPopupTimeId)
+                    }, 100)
+                    onCloseTimeModal()
                 }}>UPDATE</button>
             </Modal>
         </Container>

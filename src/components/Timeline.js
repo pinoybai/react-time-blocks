@@ -82,8 +82,6 @@ function Timeline() {
             let theParent = x[i];
             theParent.style.width = theParent.getAttribute('width')+'px';
 
-            console.log('width: ', theParent.getAttribute('width'))
-
             let taskNameElement = theParent.querySelector('.taskName');
             let taskNameElementWidth = window.getComputedStyle(taskNameElement).getPropertyValue('width');
             let taskNameOverflowElement = theParent.querySelector('.overflowName');
@@ -290,8 +288,8 @@ function Timeline() {
     }
 
     const changeTaskDuration = (updatedTime, taskId) => {
-        pauseTheTaskTimer()
         dispatch(setTasks({updatedTime, taskId}))
+        setTimeout(function() {updateTasksWidth()}, 100)
     }
 
     return (

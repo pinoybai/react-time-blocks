@@ -82,6 +82,8 @@ function Timeline() {
             let theParent = x[i];
             theParent.style.width = theParent.getAttribute('width')+'px';
 
+            console.log('width: ', theParent.getAttribute('width'))
+
             let taskNameElement = theParent.querySelector('.taskName');
             let taskNameElementWidth = window.getComputedStyle(taskNameElement).getPropertyValue('width');
             let taskNameOverflowElement = theParent.querySelector('.overflowName');
@@ -389,6 +391,11 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+    }
+
 `
 
 const TimelineControlsCover = styled.div`
@@ -410,6 +417,10 @@ const TimelineCover = styled.div`
     display:flex;
     overflow: auto;
     flex-direction: column-reverse;
+
+    @media (max-width: 750px) {
+        width: 100%;
+    }
 `
 
 const UsedTimeIndicator = styled.div`

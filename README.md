@@ -4,7 +4,7 @@ A simple time-block app to organize your tasks and manage your time better.
 
 ## DEMO
 
-[https://react-time-blocks.vercel.app/](https://react-time-blocks.vercel.app/)
+[https://time-bloc.vercel.app/](https://time-bloc.vercel.app/)
 
 ### Installation
 

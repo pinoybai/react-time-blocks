@@ -19,10 +19,16 @@ export function millisecondsToStr(milliseconds) {
     }
 
     var temp = Math.floor(milliseconds / 1000);
-    var hours = Math.floor((temp %= 86400) / 3600);
 
+    var days = Math.floor((temp %= 31536000) / 86400);
+
+    if (days) {
+        returnString = days + 'd ' + numberEnding(days);
+    }
+
+    var hours = Math.floor((temp %= 86400) / 3600);
     if (hours) {
-        returnString = hours + ' hr' + numberEnding(hours)+' ';
+        returnString += hours + 'hr' + numberEnding(hours)+' ';
     }
 
     var minutes = Math.floor((temp %= 3600) / 60);

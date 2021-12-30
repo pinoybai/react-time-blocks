@@ -2,15 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { setTotalTime } from '../slices/TotalTimeSlice'
+import { useAlert } from 'react-alert'
 
 function Question() {
 
     const dispatch = useDispatch()
+    const alert = useAlert()
 
     const setTheTotalTime = (event) => {
         event.preventDefault();
         let hourInMillieSeconds = parseInt(document.getElementById('hourInput').value) * 3600000 || 0;
         let minuteInMillieSeconds = parseInt(document.getElementById('minuteInput').value) * 60000 || 0;
+        alert.show('Total time might be different as it is relative to the total time of tasks added.')
 
         dispatch(setTotalTime(hourInMillieSeconds+minuteInMillieSeconds))
     }

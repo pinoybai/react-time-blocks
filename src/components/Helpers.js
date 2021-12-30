@@ -11,6 +11,7 @@ export const msToTime = (duration) => {
         return hours + ":" + minutes + ":" + seconds;// + "." + milliseconds;
 }
 
+//https://stackoverflow.com/questions/8211744/convert-time-interval-given-in-seconds-into-more-human-readable-form/8211872
 export function millisecondsToStr(milliseconds) {
     let returnString = '';
 

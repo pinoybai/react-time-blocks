@@ -48,10 +48,16 @@ function Timeline() {
     useEffect(() => {
         pauseTheTaskTimer()
 
-        if((parseInt(alarmPoints[alarmPoints.length -1]) + 600) >= parseInt(totalTime) / 1000){
-            let newtotaltime = (parseInt(alarmPoints[alarmPoints.length -1]) + 600) * 1000
+        if(alarmPoints.length > 0){
+            //if((parseInt(alarmPoints[alarmPoints.length -1]) + 600) >= parseInt(totalTime) / 1000){
+                let newtotaltime = (parseInt(alarmPoints[alarmPoints.length -1]) + 600) * 1000
+                dispatch(setTotalTime(newtotaltime))
+            //}
+        } else {
+            let newtotaltime = 900 * 1000;
             dispatch(setTotalTime(newtotaltime))
         }
+        
 
     }, [tasks])
 
